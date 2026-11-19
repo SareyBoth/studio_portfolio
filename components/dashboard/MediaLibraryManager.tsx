@@ -3,8 +3,9 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { Copy, Trash2, FileText, Film, Check } from 'lucide-react';
+import { Copy, Trash2, FileText, Check } from 'lucide-react';
 import type { MediaAssetData, MediaFolder, MediaKind } from '@/types/portfolio';
+import VideoStreamPlayer from '@/components/media/VideoStreamPlayer';
 import R2Uploader from './R2Uploader';
 import ConfirmDialog from './ConfirmDialog';
 
@@ -127,7 +128,7 @@ export default function MediaLibraryManager({ initialAssets }: MediaLibraryManag
               key={asset.id}
               className="rounded-2xl bg-[#14151a] border border-white/10 overflow-hidden flex flex-col justify-between"
             >
-              <div className="h-44 bg-[#0b0b0d] flex items-center justify-center overflow-hidden relative">
+              <div className="min-h-44 bg-[#0b0b0d] flex items-center justify-center overflow-hidden relative">
                 {asset.kind === 'image' ? (
                   <Image
                     src={asset.url}
@@ -137,10 +138,12 @@ export default function MediaLibraryManager({ initialAssets }: MediaLibraryManag
                     className="object-cover"
                   />
                 ) : asset.kind === 'video' ? (
-                  <div className="flex flex-col items-center gap-2 text-[#d7ff3f]">
-                    <Film className="w-8 h-8" />
-                    <span className="text-[10px] font-mono text-zinc-400">VIDEO ASSET</span>
-                  </div>
+                  <VideoStreamPlayer
+                    src={asset.url}
+                    title={asset.originalFilename}
+                    compact
+                    className="rounded-none border-0"
+                  />
                 ) : (
                   <div className="flex flex-col items-center gap-2 text-[#d7ff3f]">
                     <FileText className="w-8 h-8" />

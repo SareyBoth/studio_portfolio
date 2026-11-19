@@ -5,11 +5,19 @@ const globalForRedis = globalThis as unknown as {
   __ratanakRedis?: Redis;
 };
 
+function sanitizeRedisUrl(raw: string): string {
+  const trimmed = raw.trim().replace(/^["']|["']$/g, '');
+  const match = trimmed.match(/(redis[s]?:\/\/[^\s"'`]+)/i);
+  return match ? match[1] : trimmed;
+}
+
 function createRedisClient(): Redis {
-  const redisUrl = process.env.REDIS_URL;
-  if (!redisUrl) {
+  const rawUrl = process.env.REDIS_URL;
+  if (!rawUrl) {
     throw new Error('REDIS_URL environment variable is required.');
   }
+
+  const redisUrl = sanitizeRedisUrl(rawUrl);
 
   const client = new Redis(redisUrl, {
     maxRetriesPerRequest: 3,

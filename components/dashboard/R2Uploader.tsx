@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import { Upload, FolderOpen, X, FileText, Film, Image as ImageIcon } from 'lucide-react';
 import type { MediaAssetData, MediaFolder, MediaKind } from '@/types/portfolio';
+import VideoStreamPlayer from '@/components/media/VideoStreamPlayer';
 
 interface R2UploaderProps {
   label: string;
@@ -209,11 +210,10 @@ export default function R2Uploader({
               className="w-full max-h-48 object-contain bg-black/40"
             />
           ) : kind === 'video' ? (
-            <video
+            <VideoStreamPlayer
               src={currentUrl}
-              controls
-              preload="metadata"
-              className="w-full max-h-48 bg-black"
+              title={label}
+              compact
             />
           ) : (
             <div className="p-3 flex items-center justify-between text-xs font-mono">

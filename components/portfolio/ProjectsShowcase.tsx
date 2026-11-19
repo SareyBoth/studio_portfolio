@@ -3,6 +3,7 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import type { ProjectCategory, ProjectData } from '@/types/portfolio';
+import VideoStreamPlayer from '@/components/media/VideoStreamPlayer';
 
 interface ProjectsShowcaseProps {
   projects: ProjectData[];
@@ -308,15 +309,14 @@ export default function ProjectsShowcase({
             <div className="relative w-full bg-black/60 flex items-center justify-center p-4 sm:p-8 min-h-[340px] max-h-[65vh] overflow-hidden">
               {activeModalProject.category === 'Video' ? (
                 activeModalProject.videoUrl ? (
-                  <div className="w-full max-w-4xl aspect-video rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-black">
-                    <video
+                  <div className="w-full max-w-4xl">
+                    <VideoStreamPlayer
                       key={activeModalProject.videoUrl}
                       src={activeModalProject.videoUrl}
-                      poster={activeModalProject.thumbnailUrl ?? undefined}
-                      controls
-                      playsInline
-                      preload="metadata"
-                      className="w-full h-full object-contain bg-black"
+                      poster={activeModalProject.thumbnailUrl}
+                      title={activeModalProject.title}
+                      accentColor={activeModalProject.color}
+                      autoPlay
                     />
                   </div>
                 ) : activeModalProject.externalVideoUrl ? (

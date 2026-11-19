@@ -29,7 +29,7 @@ describe('Cloudflare R2 upload validation & key sanitization', () => {
 
     expect(
       validateMediaUpload({
-        filename: 'Heng_Ratanak_CV.pdf',
+        filename: 'SareyBoth_CV.pdf',
         mimeType: 'application/pdf',
         sizeBytes: 1_200_000,
         kind: 'cv',

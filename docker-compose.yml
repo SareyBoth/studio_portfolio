@@ -1,30 +1,30 @@
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: ratanak_postgres
+    container_name: sareyboth_postgres
     restart: unless-stopped
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: ratanak_studio
+      POSTGRES_DB: sareyboth_studio
     ports:
       - "5432:5432"
     volumes:
-      - ratanak_pgdata:/var/lib/postgresql/data
+      - sareyboth_pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d ratanak_studio"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d sareyboth_studio"]
       interval: 5s
       timeout: 5s
       retries: 10
 
   redis:
     image: redis:7-alpine
-    container_name: ratanak_redis
+    container_name: sareyboth_redis
     restart: unless-stopped
     ports:
       - "6379:6379"
     volumes:
-      - ratanak_redisdata:/data
+      - sareyboth_redisdata:/data
     command: ["redis-server", "--appendonly", "yes"]
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
@@ -33,5 +33,5 @@ services:
       retries: 10
 
 volumes:
-  ratanak_pgdata:
-  ratanak_redisdata:
+  sareyboth_pgdata:
+  sareyboth_redisdata:

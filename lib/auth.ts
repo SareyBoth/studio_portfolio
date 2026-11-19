@@ -8,7 +8,7 @@ import { CACHE_KEYS, deleteCacheKey } from './cache';
 import { getRedis } from './redis';
 import { hashPassword, verifyPassword } from './password';
 
-export const ADMIN_SESSION_COOKIE = 'ratanak_admin_session';
+export const ADMIN_SESSION_COOKIE = 'sareyboth_admin_session';
 const SESSION_DURATION_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 const SESSION_REDIS_TTL_SECONDS = 900; // 15 minutes sliding cache
 

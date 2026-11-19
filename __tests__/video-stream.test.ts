@@ -30,7 +30,7 @@ describe('Cloudflare R2 video streaming & HTTP Range helpers', () => {
 
   it('extracts R2 object keys from public CDN URLs, internal stream paths, or raw keys', () => {
     const key = 'videos/2026/commercial-cut-a1b2c3d4e5f6.mp4';
-    expect(extractR2KeyFromUrl(`https://media.ratanak.xyz/${key}`)).toBe(key);
+    expect(extractR2KeyFromUrl(`https://media.sareyboth.xyz/${key}`)).toBe(key);
     expect(extractR2KeyFromUrl(buildInternalStreamPath(key))).toBe(key);
     expect(extractR2KeyFromUrl(key)).toBe(key);
     expect(extractR2KeyFromUrl('https://youtube.com/watch?v=123')).toBeNull();

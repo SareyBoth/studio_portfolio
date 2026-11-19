@@ -50,8 +50,8 @@ export default function FloatingGlassNav({
     { label: 'Contact', id: 'contact' },
   ];
 
-  const brandWord = profile.name.trim().split(/\s+/).pop()?.toLowerCase() || 'ratanak';
-  const initial = (profile.name.trim()[0] || 'R').toUpperCase();
+  const brandWord = profile.name.trim().split(/\s+/).pop()?.toLowerCase() || 'sareyboth';
+  const initial = (profile.name.trim()[0] || 'S').toUpperCase();
 
   return (
     <header className="fixed top-4 sm:top-6 inset-x-0 z-40 flex justify-center px-3 sm:px-6 pointer-events-none">

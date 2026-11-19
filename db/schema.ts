@@ -101,7 +101,7 @@ export const siteProfile = pgTable('site_profile', {
   cvAssetId: uuid('cv_asset_id').references(() => mediaAssets.id, {
     onDelete: 'set null',
   }),
-  cvTitle: text('cv_title').notNull().default('Heng Ratanak — Resume 2026'),
+  cvTitle: text('cv_title').notNull().default('SareyBoth — Resume 2026'),
   cvDescription: text('cv_description')
     .notNull()
     .default(

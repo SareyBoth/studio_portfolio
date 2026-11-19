@@ -321,7 +321,8 @@ export default function SunsetDriveFooter({
             {/* Monumental Wordmark & Bio */}
             <div className="md:col-span-2">
               <div className="text-3xl sm:text-5xl font-black text-white tracking-tighter mb-3 font-mono">
-                RATANAK<span className="text-[#d7ff3f]">.26</span>
+                {(profile.name.trim().replace(/\s+/g, '').toUpperCase() || 'SAREYBOTH')}
+                <span className="text-[#d7ff3f]">.26</span>
               </div>
               <p className="text-xs sm:text-sm text-zinc-400 max-w-sm leading-relaxed mb-4">
                 {profile.footerBio}

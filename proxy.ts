@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-const ADMIN_SESSION_COOKIE = 'ratanak_admin_session';
+const ADMIN_SESSION_COOKIE = 'sareyboth_admin_session';
 
 /**
  * Next.js 16 Proxy: optimistic auth cookie guard for /dashboard and /login.

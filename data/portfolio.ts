@@ -49,12 +49,12 @@ export interface EducationItem {
 
 export const PORTFOLIO_DATA = {
   profile: {
-    name: 'Heng Ratanak',
+    name: 'SareyBoth',
     role: 'Designer · Video Editor · IT Support',
     location: 'Phnom Penh, Cambodia',
     availability: 'Available for work',
-    kicker: 'Heng Ratanak / Portfolio',
-    headline: 'Heng Ratanak.',
+    kicker: 'SareyBoth / Portfolio',
+    headline: 'SareyBoth.',
     subhead: 'I design posters, edit video, and support computers and networks in Phnom Penh.',
     bioLong:
       'Management Information Systems student at SETEC Institute with cross-disciplinary expertise spanning visual print design, high-tempo commercial video editing, and hands-on IT infrastructure (MikroTik RouterOS, hardware diagnostics, and enterprise lab deployment).',
@@ -65,11 +65,11 @@ export const PORTFOLIO_DATA = {
       'MikroTik Admin.',
     ],
     contact: {
-      email: 'hengratanak00@gmail.com',
+      email: 'sareyboth@gmail.com',
       phone: '+855 85 743 431',
-      telegram: '@Ratan4k_Heng',
-      telegramUrl: 'https://t.me/Ratan4k_Heng',
-      facebook: 'Heng Ratanak',
+      telegram: '@sareyboth',
+      telegramUrl: 'https://t.me/sareyboth',
+      facebook: 'SareyBoth',
       facebookUrl: 'https://facebook.com',
       locationShort: 'Phnom Penh, KH',
       timezone: 'UTC+7 (Indochina Time)',

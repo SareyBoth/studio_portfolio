@@ -12,7 +12,7 @@ import { generateR2ObjectKey, validateMediaUpload } from './r2-validation';
 import { buildInternalStreamPath } from './video-stream';
 
 const globalForR2 = globalThis as unknown as {
-  __ratanakR2Client?: S3Client;
+  __sareybothR2Client?: S3Client;
 };
 
 function getR2Config() {
@@ -41,9 +41,9 @@ export function isR2Configured(): boolean {
 }
 
 export function getR2Client(): S3Client {
-  if (!globalForR2.__ratanakR2Client) {
+  if (!globalForR2.__sareybothR2Client) {
     const cfg = getR2Config();
-    globalForR2.__ratanakR2Client = new S3Client({
+    globalForR2.__sareybothR2Client = new S3Client({
       region: 'auto',
       endpoint: `https://${cfg.accountId}.r2.cloudflarestorage.com`,
       credentials: {
@@ -52,7 +52,7 @@ export function getR2Client(): S3Client {
       },
     });
   }
-  return globalForR2.__ratanakR2Client;
+  return globalForR2.__sareybothR2Client;
 }
 
 /**

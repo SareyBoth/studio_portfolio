@@ -2,7 +2,7 @@ import 'server-only';
 import Redis from 'ioredis';
 
 const globalForRedis = globalThis as unknown as {
-  __ratanakRedis?: Redis;
+  __sareybothRedis?: Redis;
 };
 
 function sanitizeRedisUrl(raw: string): string {
@@ -37,10 +37,10 @@ function createRedisClient(): Redis {
 }
 
 export function getRedis(): Redis {
-  if (!globalForRedis.__ratanakRedis) {
-    globalForRedis.__ratanakRedis = createRedisClient();
+  if (!globalForRedis.__sareybothRedis) {
+    globalForRedis.__sareybothRedis = createRedisClient();
   }
-  return globalForRedis.__ratanakRedis;
+  return globalForRedis.__sareybothRedis;
 }
 
 export async function pingRedis(): Promise<{ ok: boolean; latencyMs: number | null; error?: string }> {

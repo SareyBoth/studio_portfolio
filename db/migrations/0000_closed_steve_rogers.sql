@@ -119,7 +119,7 @@ CREATE TABLE "site_profile" (
 	"facebook_url" text NOT NULL,
 	"portrait_asset_id" uuid,
 	"cv_asset_id" uuid,
-	"cv_title" text DEFAULT 'Heng Ratanak — Resume 2026' NOT NULL,
+	"cv_title" text DEFAULT 'SareyBoth — Resume 2026' NOT NULL,
 	"cv_description" text DEFAULT 'Complete career documentation including technical certifications, university course marks, and client project references.' NOT NULL,
 	"show_technical_category" boolean DEFAULT false NOT NULL,
 	"footer_cta_headline" text DEFAULT 'Ready to elevate your visual identity or IT infrastructure?' NOT NULL,

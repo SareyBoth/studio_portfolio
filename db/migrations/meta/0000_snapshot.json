@@ -945,7 +945,7 @@
           "type": "text",
           "primaryKey": false,
           "notNull": true,
-          "default": "'Heng Ratanak — Resume 2026'"
+          "default": "'SareyBoth — Resume 2026'"
         },
         "cv_description": {
           "name": "cv_description",

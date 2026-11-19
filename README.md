@@ -1,4 +1,4 @@
-# Heng Ratanak — 3D Studio & Portfolio CMS
+# SareyBoth — 3D Studio & Portfolio CMS
 
 An interactive 3D studio portfolio with a full-stack CMS admin dashboard. Visitors can explore an isometric Three.js 3D room with clickable wall frames, view projects and videos, and send contact inquiries. The project owner has a password-protected dashboard to manage all profile details, media uploads, projects, and site settings.
 
@@ -39,9 +39,9 @@ Open `.env.local` and configure your credentials:
 
 ```env
 # 1. Database (PostgreSQL)
-# Local Docker: postgresql://postgres:postgres@localhost:5432/ratanak_studio
+# Local Docker: postgresql://postgres:postgres@localhost:5432/sareyboth_studio
 # Cloud (Neon): postgresql://<user>:<password>@<host>/<db>?sslmode=verify-full
-DATABASE_URL="postgresql://postgres:postgres@localhost:5432/ratanak_studio"
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432/sareyboth_studio"
 
 # 2. Redis Cache & Rate Limiting
 # Must start with redis:// or rediss:// (Do NOT include 'redis-cli -u')

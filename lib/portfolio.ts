@@ -69,7 +69,7 @@ export function buildFallbackPortfolioPayload(): PortfolioPayload {
     portraitUrl: null,
     cvAssetId: null,
     cvUrl: null,
-    cvTitle: 'Heng Ratanak — Resume 2026',
+    cvTitle: 'SareyBoth — Resume 2026',
     cvDescription:
       'Complete career documentation including technical certifications, university course marks, and client project references.',
     showTechnicalCategory: false,

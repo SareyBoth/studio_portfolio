@@ -4,7 +4,7 @@ import { drizzle } from 'drizzle-orm/node-postgres';
 import * as schema from './schema';
 
 const globalForDb = globalThis as unknown as {
-  __ratanakPgPool?: Pool;
+  __sareybothPgPool?: Pool;
 };
 
 function createPool(): Pool {
@@ -21,10 +21,10 @@ function createPool(): Pool {
 }
 
 export function getPool(): Pool {
-  if (!globalForDb.__ratanakPgPool) {
-    globalForDb.__ratanakPgPool = createPool();
+  if (!globalForDb.__sareybothPgPool) {
+    globalForDb.__sareybothPgPool = createPool();
   }
-  return globalForDb.__ratanakPgPool;
+  return globalForDb.__sareybothPgPool;
 }
 
 export function getDb() {

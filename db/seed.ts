@@ -28,9 +28,9 @@ async function seed() {
     // 1. Admin user (only insert if none exists so rotated passwords are never overwritten)
     const [{ value: adminCount }] = await db.select({ value: count() }).from(schema.adminUsers);
     if (adminCount === 0) {
-      const adminEmail = (process.env.ADMIN_EMAIL || 'hengratanak00@gmail.com').trim().toLowerCase();
+      const adminEmail = (process.env.ADMIN_EMAIL || 'sareyboth@gmail.com').trim().toLowerCase();
       const adminPassword = process.env.ADMIN_PASSWORD || 'ChangeMeToAStrongPassword123!';
-      const adminName = process.env.ADMIN_NAME || 'Heng Ratanak';
+      const adminName = process.env.ADMIN_NAME || 'SareyBoth';
 
       const passwordHash = await hashPassword(adminPassword);
       await db.insert(schema.adminUsers).values({
@@ -97,7 +97,7 @@ async function seed() {
         telegramUrl: PORTFOLIO_DATA.profile.contact.telegramUrl,
         facebookName: PORTFOLIO_DATA.profile.contact.facebook,
         facebookUrl: PORTFOLIO_DATA.profile.contact.facebookUrl,
-        cvTitle: 'Heng Ratanak — Resume 2026',
+        cvTitle: 'SareyBoth — Resume 2026',
         cvDescription:
           'Complete career documentation including technical certifications, university course marks, and client project references.',
         showTechnicalCategory: false,

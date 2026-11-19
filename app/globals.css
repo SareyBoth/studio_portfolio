@@ -28,23 +28,6 @@
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
 }
 
-[data-theme="light"] {
-  --background: #f6f5f0;
-  --foreground: #121316;
-
-  --surface: #f6f5f0;
-  --surface-raised: #eae8df;
-  --surface-card: #ffffff;
-  --surface-glass: rgba(246, 245, 240, 0.82);
-  --surface-border: rgba(0, 0, 0, 0.09);
-  --on-surface: #121316;
-  --on-surface-dim: #5c626e;
-  --on-surface-muted: #8a91a0;
-
-  --line: rgba(0, 0, 0, 0.08);
-  --line-highlight: rgba(0, 0, 0, 0.22);
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -100,61 +83,11 @@ body {
   background: var(--gold);
 }
 
-/* Editorial Display Headline Utility */
-.editorial-headline {
-  letter-spacing: -0.075em;
-  line-height: 0.82;
-  font-weight: 800;
-}
-
-/* Broken Corner Brackets */
-.bracket-box {
-  position: relative;
-}
-.bracket-box::before,
-.bracket-box::after {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  pointer-events: none;
-}
-.bracket-box::before {
-  top: -1px;
-  left: -1px;
-  border-top: 1.5px solid var(--gold);
-  border-left: 1.5px solid var(--gold);
-}
-.bracket-box::after {
-  bottom: -1px;
-  right: -1px;
-  border-bottom: 1.5px solid var(--gold);
-  border-right: 1.5px solid var(--gold);
-}
-
 /* Architectural Hairlines */
 .rule-horizontal {
   height: 1px;
   background: var(--line);
   width: 100%;
-}
-
-.rule-vertical {
-  width: 1px;
-  background: var(--line);
-  height: 100%;
-}
-
-/* Arcade Metal Chip */
-.arcade-metal {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0.5) 100%), #181920;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 5px rgba(0, 0, 0, 0.4);
-}
-[data-theme="light"] .arcade-metal {
-  background: linear-gradient(180deg, #ffffff 0%, #e2e4e8 100%);
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
 /* Ember Keycap CTA */

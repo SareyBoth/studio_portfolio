@@ -48,7 +48,7 @@ export default function EducationSection({ education }: EducationSectionProps) {
                 {item.degree}
               </h3>
 
-              <div className="text-sm font-bold text-[var(--cobalt)] [data-theme='light']:text-blue-600 mb-4">
+              <div className="text-sm font-bold text-[var(--cobalt)] mb-4">
                 {item.institution}
               </div>
 

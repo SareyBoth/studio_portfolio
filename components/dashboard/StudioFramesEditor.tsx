@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useTransition } from 'react';
+import Image from 'next/image';
 import { Save } from 'lucide-react';
 import type { StudioFrameData } from '@/types/portfolio';
 import { updateStudioFrameAction } from '@/app/dashboard/actions';
@@ -95,10 +96,12 @@ export default function StudioFramesEditor({ initialFrames }: StudioFramesEditor
                 >
                   <div className="aspect-[9/16] bg-[#0b0b0d] relative flex items-center justify-center overflow-hidden">
                     {f.imageUrl ? (
-                      <img
+                      <Image
                         src={f.imageUrl}
                         alt={f.title}
-                        className="w-full h-full object-cover"
+                        fill
+                        unoptimized
+                        className="object-cover"
                       />
                     ) : (
                       <span className="text-[10px] font-mono text-zinc-500 text-center px-2">
@@ -153,10 +156,12 @@ export default function StudioFramesEditor({ initialFrames }: StudioFramesEditor
                   >
                     <div className="aspect-[16/9] bg-[#0b0b0d] relative flex items-center justify-center overflow-hidden">
                       {f.imageUrl ? (
-                        <img
+                        <Image
                           src={f.imageUrl}
                           alt={f.title}
-                          className="w-full h-full object-cover"
+                          fill
+                          unoptimized
+                          className="object-cover"
                         />
                       ) : (
                         <span className="text-[10px] font-mono text-zinc-500 text-center px-1">

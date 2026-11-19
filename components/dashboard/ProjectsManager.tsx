@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useTransition } from 'react';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Plus, Pencil, Trash2, Save, X } from 'lucide-react';
 import type { ProjectAspect, ProjectCategory, ProjectData } from '@/types/portfolio';
@@ -440,9 +441,12 @@ export default function ProjectsManager({ initialProjects }: ProjectsManagerProp
           >
             <div className="w-20 h-20 rounded-xl bg-[#0b0b0d] border border-white/10 overflow-hidden shrink-0 flex items-center justify-center">
               {project.thumbnailUrl ? (
-                <img
+                <Image
                   src={project.thumbnailUrl}
                   alt={project.title}
+                  width={80}
+                  height={80}
+                  unoptimized
                   className="w-full h-full object-cover"
                 />
               ) : (

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import type { ProjectCategory, ProjectData } from '@/types/portfolio';
 
 interface ProjectsShowcaseProps {
@@ -146,11 +147,12 @@ export default function ProjectsShowcase({
               >
                 {project.thumbnailUrl ? (
                   <>
-                    <img
+                    <Image
                       src={project.thumbnailUrl}
                       alt={project.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      fill
+                      unoptimized
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
                     {project.category === 'Video' && (
@@ -333,9 +335,12 @@ export default function ProjectsShowcase({
                   </div>
                 )
               ) : activeModalProject.thumbnailUrl ? (
-                <img
+                <Image
                   src={activeModalProject.thumbnailUrl}
                   alt={activeModalProject.title}
+                  width={1200}
+                  height={1500}
+                  unoptimized
                   className="max-h-[58vh] w-auto max-w-full rounded-2xl border border-white/15 shadow-2xl object-contain"
                 />
               ) : (

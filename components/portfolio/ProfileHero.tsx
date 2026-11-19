@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo } from 'react';
+import Image from 'next/image';
 import type { ProfileData } from '@/types/portfolio';
 
 interface ProfileHeroProps {
@@ -143,10 +144,12 @@ export default function ProfileHero({
               {/* Center Portrait Photo (from R2) or Stylized Monogram Fallback */}
               <div className="relative w-full flex-1 my-4 rounded-xl bg-[#181a24] border border-white/10 flex flex-col items-center justify-center overflow-hidden">
                 {profile.portraitUrl ? (
-                  <img
+                  <Image
                     src={profile.portraitUrl}
                     alt={`${profile.name} portrait`}
-                    className="w-full h-full object-cover"
+                    fill
+                    unoptimized
+                    className="object-cover"
                   />
                 ) : (
                   <>

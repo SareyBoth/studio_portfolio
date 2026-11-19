@@ -172,12 +172,12 @@ export default function ParticleScrollEffect() {
     <>
       {/* 6 Architectural vertical hairlines across viewport */}
       <div className="vrules fixed inset-0 pointer-events-none z-10 flex justify-between px-4 sm:px-12 max-w-7xl mx-auto opacity-20">
-        <div className="w-[1px] h-full bg-white/10 dark:bg-white/10 [data-theme='light']:bg-black/10" />
-        <div className="w-[1px] h-full bg-white/10 dark:bg-white/10 [data-theme='light']:bg-black/10 hidden md:block" />
-        <div className="w-[1px] h-full bg-white/10 dark:bg-white/10 [data-theme='light']:bg-black/10 hidden lg:block" />
-        <div className="w-[1px] h-full bg-white/10 dark:bg-white/10 [data-theme='light']:bg-black/10 hidden lg:block" />
-        <div className="w-[1px] h-full bg-white/10 dark:bg-white/10 [data-theme='light']:bg-black/10 hidden md:block" />
-        <div className="w-[1px] h-full bg-white/10 dark:bg-white/10 [data-theme='light']:bg-black/10" />
+        <div className="w-[1px] h-full bg-white/10" />
+        <div className="w-[1px] h-full bg-white/10 hidden md:block" />
+        <div className="w-[1px] h-full bg-white/10 hidden lg:block" />
+        <div className="w-[1px] h-full bg-white/10 hidden lg:block" />
+        <div className="w-[1px] h-full bg-white/10 hidden md:block" />
+        <div className="w-[1px] h-full bg-white/10" />
       </div>
 
       {/* Particle Canvas */}

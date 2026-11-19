@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
+import Image from 'next/image';
 import { Upload, FolderOpen, X, FileText, Film, Image as ImageIcon } from 'lucide-react';
 import type { MediaAssetData, MediaFolder, MediaKind } from '@/types/portfolio';
 
@@ -24,7 +25,7 @@ function readImageDimensions(file: File): Promise<{ width: number; height: numbe
   if (!file.type.startsWith('image/')) return Promise.resolve(null);
   return new Promise((resolve) => {
     const url = URL.createObjectURL(file);
-    const img = new Image();
+    const img = new window.Image();
     img.onload = () => {
       URL.revokeObjectURL(url);
       resolve({ width: img.naturalWidth, height: img.naturalHeight });
@@ -199,9 +200,12 @@ export default function R2Uploader({
       {currentUrl && (
         <div className="rounded-xl overflow-hidden border border-white/10 bg-[#14151a]">
           {kind === 'image' ? (
-            <img
+            <Image
               src={currentUrl}
               alt={label}
+              width={640}
+              height={360}
+              unoptimized
               className="w-full max-h-48 object-contain bg-black/40"
             />
           ) : kind === 'video' ? (
@@ -311,9 +315,12 @@ export default function R2Uploader({
                     className="rounded-xl bg-[#0b0b0d] border border-white/10 hover:border-[#d7ff3f] p-2 text-left transition-colors cursor-pointer flex flex-col gap-2"
                   >
                     {asset.kind === 'image' ? (
-                      <img
+                      <Image
                         src={asset.url}
                         alt={asset.originalFilename}
+                        width={240}
+                        height={160}
+                        unoptimized
                         className="w-full h-24 object-cover rounded-lg bg-black"
                       />
                     ) : (

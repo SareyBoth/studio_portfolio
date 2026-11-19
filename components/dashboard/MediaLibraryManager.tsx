@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Copy, Trash2, FileText, Film, Check } from 'lucide-react';
 import type { MediaAssetData, MediaFolder, MediaKind } from '@/types/portfolio';
@@ -128,10 +129,12 @@ export default function MediaLibraryManager({ initialAssets }: MediaLibraryManag
             >
               <div className="h-44 bg-[#0b0b0d] flex items-center justify-center overflow-hidden relative">
                 {asset.kind === 'image' ? (
-                  <img
+                  <Image
                     src={asset.url}
                     alt={asset.originalFilename}
-                    className="w-full h-full object-cover"
+                    fill
+                    unoptimized
+                    className="object-cover"
                   />
                 ) : asset.kind === 'video' ? (
                   <div className="flex flex-col items-center gap-2 text-[#d7ff3f]">
